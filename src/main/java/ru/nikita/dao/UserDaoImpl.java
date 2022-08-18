@@ -25,6 +25,7 @@ public class UserDaoImpl implements UserDao {
         userToUpdate.setName(user.getName());
         userToUpdate.setSurname(user.getSurname());
         userToUpdate.setEmail(user.getEmail());
+        entityManager.merge(user);
     }
 
     @Transactional

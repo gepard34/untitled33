@@ -14,6 +14,7 @@
                 <th scope="col">Surname</th>
                 <th scope="col">e-mail</th>
                 <th scope="col"></th>
+                <th scope="col"></th>
             </tr>
         </thread>
         <tbody>
@@ -22,10 +23,16 @@
             <td th:text="${user.getName()}"/>
             <td th:text="${user.getSurname()}"/>
             <td th:text="${user.getEmail()}"/>
-            <td><a th:href="@{/{id}/edit(id=${user.getId()})}">Update</a></td>
+            <td><a th:href="@{/users/{id}/edit(id=${user.getId()})}">Edit</a></td>
+            <td><a th:href="@{/users/delete/{id}(id=${user.getId()})}">Delete</a></td>
         </tr>
         </tbody>
     </table>
+    <br/>
+    <hr/>
+
+    <a href="/users/new">Create new person</a>
+
 </div>
 </body>
 </html>
