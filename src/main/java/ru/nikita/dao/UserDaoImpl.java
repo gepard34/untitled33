@@ -20,11 +20,7 @@ public class UserDaoImpl implements UserDao {
     }
 
 
-    public void edit(int id, User user) {
-        User userToUpdate = entityManager.find(User.class, id);
-        userToUpdate.setName(user.getName());
-        userToUpdate.setSurname(user.getSurname());
-        userToUpdate.setEmail(user.getEmail());
+    public void edit(User user) {
         entityManager.merge(user);
     }
 
@@ -35,7 +31,7 @@ public class UserDaoImpl implements UserDao {
     }
 
 
-    public User show(int id) {
+    public User getUser(int id) {
         return entityManager.find(User.class, id);
     }
 
